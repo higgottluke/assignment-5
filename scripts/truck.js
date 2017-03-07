@@ -20,7 +20,12 @@
     customerIdArray.forEach(function (id) {
       console.log(this.db.get(id));
     }.bind(this));
-};
+    };
+  Truck.prototype.getAllOrders = function () {
+    var orderArray = Object(this.db.getAll());
+    return orderArray;
+  };
+
   App.Truck = Truck;
   window.App = App;
 })(window);
